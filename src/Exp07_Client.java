@@ -38,7 +38,6 @@ class ClientIn implements Runnable{
             }
         }
     }
-
 }
 //Thread to send
 class ClientOut implements Runnable{
@@ -55,8 +54,7 @@ class ClientOut implements Runnable{
                 out.write(string);
                 out.flush();
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException e) { e.printStackTrace();
             try {
                 socket.close();
                 reader.close();

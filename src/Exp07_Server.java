@@ -13,12 +13,10 @@ public class Exp07_Server{
                 new Thread(new ServerIn(accept_client)).start();
                 new Thread(new ServerOut(accept_client)).start();
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException e) { e.printStackTrace();
             try {
                 serverSocket.close();
             } catch (IOException e1) {
-                // TODO Auto-generated catch block
                 e1.printStackTrace();
             }
         }
@@ -27,7 +25,6 @@ public class Exp07_Server{
 //Accepted threads
 class ServerIn implements Runnable{
     Socket socket;
-
     ServerIn(Socket socket){
         this.socket = socket;
     }
